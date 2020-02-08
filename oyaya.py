@@ -4,7 +4,7 @@ from twilio.rest import Client
 account = os.environ.get('TWILIO_ACCOUNT_SID')
 token = os.environ.get('TWILIO_AUTH_TOKEN')
 client = Client(account, token)
-#num=['+254712360234','+254712171225']
+#num=['+254XXXXXXX','+25XXXXXXXXX']
 num = open('/home/ali/contacts.txt','r').readlines()
 
 #num.readline()
@@ -14,7 +14,7 @@ num = open('/home/ali/contacts.txt','r').readlines()
 for number in num:
     message = client.messages.create(
         to=number,
-        #from_="JKUMSA WAAYE",
+        #from_="comany name",
         #from_=os.environ.get('TWILIO_PHONE_NUMBER'),
         messaging_service_sid=os.environ.get('MESSAGING_SERVICE_ID'),
         body=""" YOUR MESSAGE HRE""")
